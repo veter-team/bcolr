@@ -34,7 +34,9 @@ translate([0, 0, cylinder_length + bottom_plate_base_height + 2 * explosion_dist
 rotate([180, 0, 0])
 bottom_plate();
 
-%translate([0,
+translate([0,
         -total_width / 2 - explosion_distance,
         -motor_shaft_to_top + motor_shaft_shift + cylinder_length])
-rotate([90, 0, 0]) motor();
+rotate([90, 0, 0])
+color("Silver", 0.5)
+motor();
