@@ -5,8 +5,10 @@ use <holder-to-shaft-coupling.scad>
 use <motor_holder.scad>
 use <motor.scad>
 use <bottom_plate.scad>
+use <pusher.scad>
 include <main_dimensions.scad>
 include <dumper_shaft.scad>
+include <wheel_holder.scad>
 
 
 explosion_distance = 3;
@@ -20,6 +22,18 @@ module asm_holder()
     holder_base();
 }
 
+module wheel_holder()
+{
+    translate([0,
+            -total_width / 2 - explosion_distance - 15,
+            -motor_shaft_to_top + cylinder_length])
+    rotate([90, 30, 0])
+    {
+        wheel_holder_base();
+        translate([main_hole_dist + 10, 0, wheel_holder_thick + 1]) pusher();
+    }
+}
+
 
 whole_part();
 
@@ -29,6 +43,9 @@ translate([2 * explosion_distance, -explosion_distance, 0]) dumper_shaft();
 
 asm_holder();
 mirror([0, 1, 0]) asm_holder();
+
+wheel_holder();
+mirror([0, 1, 0]) wheel_holder();
 
 translate([0, 0, cylinder_length + bottom_plate_base_height + 2 * explosion_distance])
 rotate([180, 0, 0])
