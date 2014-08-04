@@ -28,9 +28,14 @@ motor_holder_mounting_hole_shift = hub_outer_radius + (cylinder_radius - hub_out
 bottom_plate_base_height = 3;
 
 main_hole_dist = 139;
-wheel_holder_thick = 5;
+wheel_holder_thick = 6;
+wheel_holder_r = 20;
+front_bearing_hole_r = 12.10;
 rear_bearing_hole_w = 5;
-rear_bearing_hole_r = 9.6;
+rear_bearing_hole_r = 9.8;
+rear_cover_h = 3;
+
+springer_hole = 30;
 
 
 module mounting_hole(thickness, use_bolt)
@@ -46,6 +51,6 @@ module mounting_hole(thickness, use_bolt)
     {
         cylinder(h = l, r = d / 2);
     }
-    rotate([180, 0, 0]) translate([0, 0, -0.05]) cylinder(h = l, r = 1.2 * d);
-    translate([0, 0, thickness + 0.2]) cylinder(h = l, r = 1.2 * d);
+    rotate([180, 0, 0]) translate([0, 0, -0.05]) cylinder(h = l, r = 1.0 * d);
+    translate([0, 0, thickness + 0.2]) cylinder(h = l, r = 1.0 * d);
 }

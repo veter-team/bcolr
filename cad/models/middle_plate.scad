@@ -29,16 +29,23 @@ module middle_plate()
     {
         roundedBox([w, h, d], 1, false);
 
+        // Pockets for inner rear cover
+        translate([w / 2 - rear_cover_h, h / 2 - wall - mount_hole_radius, 0])
+        rotate([0, 90, 0]) cylinder(r = wheel_holder_r / 3 + tolerance, h = rear_cover_h + 2 * tolerance);
+        mirror([1, 0, 0])
+        translate([w / 2 - rear_cover_h, h / 2 - wall - mount_hole_radius, 0])
+        rotate([0, 90, 0]) cylinder(r = wheel_holder_r / 3 + tolerance, h = rear_cover_h + 2 * tolerance);
+
         shaft_hole(w, h, wall);
         // second
         mirror([0, 1, 0])
         shaft_hole(w, h, wall);
 
         // For dumpers
-        mount_pocket(w, h, d, hole_depth, 19);
+        mount_pocket(w, h, d, hole_depth + 2, 19);
         // second
         mirror([1, 0, 0])
-        mount_pocket(w, h, d, hole_depth, 19);
+        mount_pocket(w, h, d, hole_depth + 2, 19);
 
         // For screws
         mirror([0, 1, 0])
