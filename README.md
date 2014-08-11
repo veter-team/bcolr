@@ -13,3 +13,6 @@ Useful links
  - Shop: http://www.logicsupply.de/beaglebone-black/accessories/uwn200/ 
  - Download link at Mediatek site: http://mediatek.com/en/downloads/mt7601u-usb/ 
  - Real download link is: http://s3.amazonaws.com/mtk.cfs/Downloads/linux/DPO_MT7601U_LinuxSTA_3.0.0.4_20130913.tar.bz2
+* DC/DC 1.5A 7-36VIN 5VOUT converter:
+ - http://www.digikey.de/product-detail/de/OKI-78SR-5%2F1.5-W36-C/811-2196-5-ND/2259781
+ - http://www.digikey.de/product-detail/de/OKI-78SR-5%2F1.5-W36H-C/811-2692-ND/3438675
